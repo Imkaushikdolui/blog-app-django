@@ -1,0 +1,48 @@
+{% extends 'base1.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!--- Meet the team -->
+<div class="container-fluid padding">
+	<div class="row welcome text-center">
+		<div class="col-12">
+			<h1 class="display-4">DEVELOPED BY</h1>
+		</div>
+		<hr>
+	</div>
+
+</div>
+
+<!--- Cards -->
+<div class="container-fluid padding">
+	<div class="row padding">
+		<div class="col-md-4">
+			<div class="card">
+				<img src="{% static "developer.jpeg" %}" class="card-img-top">
+				<div class="card-body">
+					<center><h4 class="card-title"><b>KAUHSIK DOLUI<b></h4></center>
+						<h6>Final Year BCA Student(2022-2023)			| Sheshadripuram College Bangalore</h6>
+						<h6>Junior Software Developer					| Pace Wisdom pvt ltd.</h6>
+						<h6>Email- kaushikdolui4@gmail.com<h6>
+						<h6>Bengaluru,Karnataka,India</h6>
+						<center>
+							<div>
+								<p><b>Social Media:</b></p>
+								<a href="https://instagram.com/ii_.panda._ii?igshid=NTA5ZTk1NTc=" class="btn btn-outline-secondary" target="_blank" >Instagram</a>
+								<a href="https://github.com/Imkaushikdolui" class="btn btn-outline-secondary" target="_blank" >Github</a>
+							</div>
+							<div>
+								<a href = "mailto:kaushikdolui4@gmail.com?subject = Feedback&body = Message">
+									Send Feedback
+								</a>
+							</div>
+						</center>
+				</div>
+			</div>
+		</div>
+    </div>
+</div>
+
+{% endblock %}

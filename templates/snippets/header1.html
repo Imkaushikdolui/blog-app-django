@@ -1,0 +1,89 @@
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" 
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+{% load static %}
+<style type="text/css">
+    .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+      
+      .form-control-dark {
+        color: #fff;
+        background-color: var(--bs-dark);
+        border-color: var(--bs-gray);
+      }
+      .form-control-dark:focus {
+        color: #fff;
+        background-color: var(--bs-dark);
+        border-color: #fff;
+        box-shadow: 0 0 0 .25rem rgba(255, 255, 255, .25);
+      }
+      
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+      
+      .text-small {
+        font-size: 85%;
+      }
+      
+      .dropdown-toggle {
+        outline: 0;
+      }
+
+      .search-bar{
+        max-width: 500px;
+        width: 100%;
+      }
+</style>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Kaushik.com</title>
+	<link rel="icon" href={% static "spmc.png" %} type="image/jpg" sizes="any">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css">
+</head>
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+	<div class="container-fluid">
+		<a href="{% url 'home' %}" class="navbar-brand"><img id="jecrclogotop" onmouseover="this.src='{% static "logo.png" %}'" onmouseout="this.src='{% static "logo.png" %}'" src="{% static "logo.png" %}"></a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <div class="container">
+                <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+                    <h5 class="my-0 mr-md-auto font-weight-normal">
+                        {% if request.user.is_authenticated %}
+                            <p>Hello, {{request.user.username}}</p>
+                        {% endif %}
+                    </h5>
+                    <nav class="my-2 my-md-0 mr-md-3">
+                    
+                        {% if request.user.is_authenticated %}
+                            <a class="btn btn-outline-primary" href="{% url 'home' %}">Home</a>
+                            <a class="btn btn-outline-primary" href="{% url 'blog' %}">Blog</a> 
+                            <a class="btn btn-outline-primary" href="{% url 'account' %}">Account Info</a>
+                            <a class="btn btn-outline-primary" href="{% url 'logout' %}">Logout</a> 
+                            <a class="btn btn-outline-primary" href="{% url 'team' %}">Contact Us</a> 
+                            
+                        {% else %}
+                            <a class="btn btn-outline-primary" href="{% url 'home' %}">Home</a>
+                            <a class="btn btn-outline-primary" href="{% url 'blog' %}">Blog</a> 
+                            <a class="btn btn-outline-primary" href="{% url 'login' %}">Login</a>
+                            <a class="btn btn-outline-primary" href="{% url 'register' %}">Register</a>
+                            <a class="btn btn-outline-primary" href="{% url 'team' %}">Contact Us</a> 
+                        {% endif %}
+                    </nav>
+                </header>
+            </div>
+        </div>
+    </div>
+</nav>
